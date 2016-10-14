@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="nineairIBMMQCfg" class="dcsiclear.thread.NineAirIBMMQCfg">
+		<property name="queueManager">
+			<value>QM_TONY</value>
+		</property>
+		<property name="ccsid">
+			<value>1381</value>
+		</property>
+		<property name="channel">
+			<value>SVRCONN</value>
+		</property>
+		<property name="hostName">
+			<value>127.0.0.1</value>
+		</property>
+		<property name="port">
+			<value>1418</value>
+		</property>
+		<property name="psgQueueName">
+			<value>LQ1</value>
+		</property>
+		<property name="bagQueueName">
+			<value>LQ2</value>
+		</property>
+		<property name="clientId">
+			<value>MUSR_MQADMIN</value>
+		</property>
+		<property name="targetClient">
+			<value>1</value>
+		</property>
+		<property name="encoding">
+			<value>546</value>
+		</property>
+		<property name="maxdepth">
+			<value>1</value>
+		</property>
+		<property name="charsetEncoding">
+			<value>UTF-16LE</value>
+		</property>
+	</bean>
+</beans>

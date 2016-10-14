@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="newAPPIbmMQCfg" class="dcsiclear.thread.NEWAPPIBMMQCfg">
+		<property name="queueManager">
+			<value>QM_NEWAPP</value>
+			<!-- <value>QM_AMB</value> -->
+		</property>
+		<property name="ccsid">
+			<value>1208</value>
+		</property>
+		<property name="channel">
+			<value>CHAN1</value>
+		</property>
+		<property name="hostName">
+			<value>127.0.0.1</value>
+			<!-- <value>127.0.0.1</value> -->
+		</property>
+		<property name="port">
+			<value>1414</value>
+			<!-- <value>1417</value> -->
+		</property>
+		<property name="ANJqueueName">
+			<value>ANJ_LQ</value>
+		</property>
+		<property name="ATSCqueueName">
+			<value>ATSC_LQ</value>
+		</property>
+		<property name="PNRqueueName">
+			<value>PNR_LQ</value>
+		</property>
+		<property name="PSRqueueName">
+			<value>PSR_LQ</value>
+		</property>
+		<property name="clientId">
+			<value>MUSR_MQADMIN</value>
+		</property>
+		<property name="targetClient">
+			<value>1</value>
+		</property>
+		<property name="encoding">
+			<value>546</value>
+		</property>
+		<property name="maxdepth">
+			<value>1</value>
+		</property>
+		<property name="charsetEncoding">
+			<value>UTF-16LE</value>
+		</property>
+	</bean>
+</beans>

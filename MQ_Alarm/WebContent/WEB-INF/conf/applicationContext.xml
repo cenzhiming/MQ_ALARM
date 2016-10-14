@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+	
+	
+	<!-- 监控DCSI队列的配置 -->
+	<bean id="monitorThread" class="com.travelsky.thread.MonitorThread">
+		<property name="ibmMQCfg">
+			<ref bean="ibmMQCfg"/>
+		</property>
+		<!-- 队列深度查询时间间隔，单位 毫秒 -->
+		<property name="inteval">
+			<value>20000</value>
+		</property>
+		<!-- MQ队列报警深度 -->
+		<property name="depthLimit">
+			<value>100</value>
+		</property>
+	</bean>
+	<bean id="nineAirMonitorThread" class="com.travelsky.thread.NineAirMonitorThread">
+		<property name="nineairIBMMQCfg">
+			<ref bean="nineairIBMMQCfg"/>
+		</property>
+		<!-- 队列深度查询时间间隔，单位 毫秒 -->
+		<property name="inteval">
+			<value>20000</value>
+		</property>
+		<!-- 旅客队列的MQ预警值 -->
+		<property name="psgdepthLimit">
+			<value>200</value>
+		</property>
+		<!-- 行李队列的MQ预警值 -->
+		<property name="bagdepthLimit">
+			<value>200</value>
+		</property>
+	</bean>
+	<bean id="newappMonitorThread" class="com.travelsky.thread.NEWAPPMonitorThread">
+		<property name="newAPPIbmMQCfg">
+			<ref bean="newAPPIbmMQCfg"/>
+		</property>
+		<property name="inteval">
+			<value>20000</value>
+		</property>
+		<property name="anjdepthLimit">
+			<value>200</value>
+		</property>
+		<property name="atscdepthLimit">
+			<value>200</value>
+		</property>
+		<property name="pnrdepthLimit">
+			<value>200</value>
+		</property>
+		<property name="psrdepthLimit">
+			<value>200</value>
+		</property>
+	</bean>
+</beans>

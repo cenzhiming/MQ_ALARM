@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE log4j:configuration SYSTEM 
+          "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<!-- <!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd"> -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+  <!-- [控制台STDOUT] -->
+  <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p [%c] - %m%n" />
+		</layout>
+	</appender>
+
+   <appender name="total"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="ALL" />
+		<!-- levels this appender emits -->
+		<param name="File" value="D://MqLogs/MQ_Alarm/total.log" />
+		<param name="Append" value="true" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="BufferedIO" value="false" />
+		<param name="BufferSize" value="8192" />
+		<param name="MaxBackupIndex" value="20"/>
+		<param name="MaxFileSize" value="4MB" />
+		<param name="Encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%-5p] %d{yyyy-MM-dd HH:mm:ss} [%c]%n%m%n" />
+		</layout>
+	</appender>
+	
+	<logger name="com" additivity="true">
+		<level value="DEBUG" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="total" />
+	</logger>
+	
+	<logger name="org" additivity="true">
+		<level value="WARN" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="total" />
+	</logger>
+
+</log4j:configuration>
